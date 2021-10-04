@@ -14,12 +14,12 @@ Basic Temperature Sensor API Sample
 - 12FA - 12 Factor-App: `50%` *Partially*
 
 ## Commands
-- `git clone https://github.com/mustafayelmer/qardio-demo.git` *// clone git into local*
-- `cd qardio-demo` *// go to project folder*
-- `chmod +x mvnw` *// change mode for folder to avoid credential errors*
-- `./mvnw test` *// run test*
-- `./mvnw package` *// build project*
-- `java -jar target/*.jar` *// run project*
+- [ ] `git clone https://github.com/mustafayelmer/qardio-demo.git` *// clone git into local*
+- [ ] `cd qardio-demo` *// go to project folder*
+- [ ] `chmod +x mvnw` *// change mode for folder to avoid credential errors*
+- [ ] `./mvnw test` *// run test*
+- [ ] `./mvnw package` *// build project*
+- [ ] `java -jar target/*.jar` *// run project*
 
 
 ## Postman
@@ -30,6 +30,7 @@ Basic Temperature Sensor API Sample
 - [Postman Collection Export](./qardio.postman_collection.json)
 - [Postman Environment Export](./qardio.postman_environment.json)
 - Note: Before starting to test, please call Mock service (devices/mock)
+- Header key for api key is `X-api-Key`
 
 ## OpenAPI
 > All endpoints, dto(models) and entities are documented
@@ -39,6 +40,7 @@ Basic Temperature Sensor API Sample
 - [OpenAPI Interface / Swagger UI](http://localhost:8080/swagger-ui.html)
 - `apiKey` : run devices/list and select api-key of one of devices, and authenticate to server this apiKey
 - Note: Before starting to test, please call Mock service (devices/mock)
+- Header key for api key is `X-api-Key`
 
 ## Testing Steps
 - Call Create mocking data - `GET` `{{host}}v1/devices/mock`
