@@ -39,6 +39,12 @@ Basic Temperature Sensor API Sample
 - `apiKey` : run devices/list and select api-key of one of devices, and authenticate to server this apiKey
 - Note: Before starting to test, please call Mock service (devices/mock)
 
+## Testing Steps
+- Call Create mocking data - `GET` `{{host}}v1/devices/mock`
+- Call list devices - `GET` `{{host}}v1/devices`
+- Save api-key of any device
+- Because all temperature operations need this api-key, because temperature records are owned a device
+
 ## Samples
 
 ### Device
