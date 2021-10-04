@@ -1,0 +1,509 @@
+{
+	"info": {
+		"_postman_id": "7688af63-99f3-4f17-88cc-49b832c5b97d",
+		"name": "qardio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "initialize",
+			"item": [
+				{
+					"name": "mock",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}v1/devices/mock",
+							"host": [
+								"{{host}}v1"
+							],
+							"path": [
+								"devices",
+								"mock"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "devices",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}v1/devices",
+							"host": [
+								"{{host}}v1"
+							],
+							"path": [
+								"devices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"apiKey\": \"faecd20d-04c0-46fa-a7c6-cb758ad2faf9\",\n  \"enabled\": true,\n  \"mac\": \"39-A5-66-3B-B6-19\",\n  \"name\": \"Device #555\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}v1/devices",
+							"host": [
+								"{{host}}v1"
+							],
+							"path": [
+								"devices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit {{id}}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Device #666\",\n    \"apiKey\": \"faecd203-04c0-46fa-a7c6-cb758ad2faf9\",\n    \"enabled\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}v1/devices/78e8cde2-5315-4bde-a3af-c42bbe2b5b78",
+							"host": [
+								"{{host}}v1"
+							],
+							"path": [
+								"devices",
+								"78e8cde2-5315-4bde-a3af-c42bbe2b5b78"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset-api-key {{id}}",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{host}}v1/devices/78e8cde2-5315-4bde-a3af-c42bbe2b5b78",
+							"host": [
+								"{{host}}v1"
+							],
+							"path": [
+								"devices",
+								"78e8cde2-5315-4bde-a3af-c42bbe2b5b78"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById {{id}}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}v1/devices/78e8cde2-5315-4bde-a3af-c42bbe2b5b78",
+							"host": [
+								"{{host}}v1"
+							],
+							"path": [
+								"devices",
+								"78e8cde2-5315-4bde-a3af-c42bbe2b5b78"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByApiKey {{apiKey}}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}v1/devices/561ba1cf-711c-4d69-9c55-35a0f649fe66/api-key",
+							"host": [
+								"{{host}}v1"
+							],
+							"path": [
+								"devices",
+								"561ba1cf-711c-4d69-9c55-35a0f649fe66",
+								"api-key"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByMac {{mac}}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}v1/devices/39-A5-66-4B-B6-D9/mac-address",
+							"host": [
+								"{{host}}v1"
+							],
+							"path": [
+								"devices",
+								"39-A5-66-4B-B6-D9",
+								"mac-address"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "temperature",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "X-Api-Key",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}v1/temperatures",
+							"host": [
+								"{{host}}v1"
+							],
+							"path": [
+								"temperatures"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save ##without time",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "X-Api-Key",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"degree\": 14\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}v1/temperatures",
+							"host": [
+								"{{host}}v1"
+							],
+							"path": [
+								"temperatures"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save ##with time",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "X-Api-Key",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"degree\": 14,\n  \"occurredAt\": \"2021-10-04T04:10:52.396Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}v1/temperatures",
+							"host": [
+								"{{host}}v1"
+							],
+							"path": [
+								"temperatures"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "saveBulk",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "X-Api-Key",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"degree\": 14,\n        \"occurredAt\": \"2021-10-04T05:43:06.673778\"\n    },\n    {\n        \"degree\": 18,\n        \"occurredAt\": \"2021-10-04T05:53:06.673778\"\n    },\n    {\n        \"degree\": 11,\n        \"occurredAt\": \"2021-10-04T06:03:06.673778\"\n    },\n    {\n        \"degree\": 23,\n        \"occurredAt\": \"2021-10-04T06:13:06.673778\"\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}v1/temperatures/bulk",
+							"host": [
+								"{{host}}v1"
+							],
+							"path": [
+								"temperatures",
+								"bulk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById {{id}}",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "X-Api-Key",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}v1/temperatures/ca4410d4-39b1-4d9f-99a7-135498f0f37e",
+							"host": [
+								"{{host}}v1"
+							],
+							"path": [
+								"temperatures",
+								"ca4410d4-39b1-4d9f-99a7-135498f0f37e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "aggregateDaily",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "X-Api-Key",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}v1/temperatures/hourly",
+							"host": [
+								"{{host}}v1"
+							],
+							"path": [
+								"temperatures",
+								"hourly"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "aggregateHourly",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "X-Api-Key",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}v1/temperatures/daily",
+							"host": [
+								"{{host}}v1"
+							],
+							"path": [
+								"temperatures",
+								"daily"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "send",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "key",
+							"value": "X-Api-Key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"degree\": 18,\n    \"occurredAt\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8091/temperatures/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"temperatures",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"licensePlate\": \"CCC-1\",\n    \"seatCount\": 2,\n    \"convertible\": false,\n    \"rating\": 1,\n    \"engineType\": \"ELECTRIC\",\n    \"manufacturer\": \"Toyota\",\n    \"driver\": {\"username\": \"driver01\", \"password\": \"driver01pw\"}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8092/v1/cars",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8092",
+					"path": [
+						"v1",
+						"cars"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
