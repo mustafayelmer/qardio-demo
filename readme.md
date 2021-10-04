@@ -33,6 +33,7 @@ Basic Temperature Sensor API Sample
 
 ## OpenAPI
 > All endpoints, dto(models) and entities are documented
+> 
 > Authentication (ApiKey style) was implemented
 > 
 - [OpenAPI Interface / Swagger UI](http://localhost:8080/swagger-ui.html)
@@ -118,7 +119,7 @@ Basic Temperature Sensor API Sample
 ### Temperature
 
 #### List
-> List temperatures of selected device (api-key in header)
+> List temperatures of **selected device** (api-key in header)
 > 
 - Endpoint: `GET` `{{host}}v1/temperatures`
 - Variables: `header` > `X-Api-Key`
@@ -152,7 +153,7 @@ Basic Temperature Sensor API Sample
 - Curl: `curl -X POST "http://localhost:8080/v1/temperatures/bulk" -H "accept: */*" -H "X-Api-Key: 561ba1cf-711c-4d69-9c55-35a0f649fe66" -H "Content-Type: application/json" -d "[ { \"degree\": 14, \"occurredAt\": \"2021-10-04T05:43:06.673778\" }, { \"degree\": 18, \"occurredAt\": \"2021-10-04T05:53:06.673778\" }, { \"degree\": 11, \"occurredAt\": \"2021-10-04T06:03:06.673778\" }, { \"degree\": 23, \"occurredAt\": \"2021-10-04T06:13:06.673778\" }]"`
 
 #### Aggregate Daily
-> Returns daily aggregation with average temperature and times (how many sent)
+> Returns **daily** aggregation with average temperature and times (how many sent)
 >
 > It's **not last 24hr**, it is starting with current day (yyyy-mm-dd 00:00:00)
 >
@@ -161,7 +162,7 @@ Basic Temperature Sensor API Sample
 - Curl: `curl -X GET "http://localhost:8080/v1/temperatures/daily" -H "accept: */*" -H "X-Api-Key: 561ba1cf-711c-4d69-9c55-35a0f649fe66"`
 
 #### Aggregate Hourly
-> Returns hourly aggregation with average temperature and times (how many sent)
+> Returns **hourly** aggregation with average temperature and times (how many sent)
 >
 > It's **not last 60min**, it is starting with current hour (yyyy-mm-dd hh:00:00)
 >
